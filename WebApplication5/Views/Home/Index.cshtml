@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="https://www.google.com/recaptcha/api.js?render=Key"></script>
+<div class="text-center">
+    <div></div>
+    <button onclick="onClick()" id="submitButton">Submit</button>
+
+    <script>
+        function onClick() {
+            grecaptcha.ready(function () {
+                grecaptcha.execute('Key', { action: 'submit' }).then(function (token) {
+                    console.log(token);
+                });
+            });
+        }
+    </script>
+</div>
